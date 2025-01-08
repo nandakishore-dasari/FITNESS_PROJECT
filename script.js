@@ -7,7 +7,7 @@ const progressFill = document.getElementById('progress-fill');
 let exercises = [];
 let completedExercises = 0;
 
-// Exercise database with goal-based exercises
+
 const exerciseDatabase = {
   weight_loss: [
     { name: 'Running', completed: false },
@@ -37,7 +37,7 @@ function fetchExercises(goal) {
   return exerciseDatabase[goal] || [];
 }
 
-// Update the progress tracker bar
+
 function updateProgress() {
   const total = exercises.length;
   progressText.textContent = `Progress: ${completedExercises}/${total}`;
@@ -45,7 +45,6 @@ function updateProgress() {
   progressFill.style.width = `${progressPercentage}%`;
 }
 
-// Render the list of exercises dynamically
 function renderExercises(exercises) {
   exerciseList.innerHTML = '';
   exercises.forEach((exercise, index) => {
@@ -60,7 +59,7 @@ function renderExercises(exercises) {
   resultsSection.classList.remove('hidden');
 }
 
-// Display a completion message when all exercises are done
+
 function showCompletionMessage() {
   if (completedExercises === exercises.length) {
     const message = document.createElement('div');
